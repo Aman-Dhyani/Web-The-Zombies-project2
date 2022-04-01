@@ -1,0 +1,214 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    overflow: hidden;
+}
+body{
+    background-image: url(images/background.jpg);
+    background-position:0px -1px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: 78% 101vh;
+    z-index: -1;
+    transition: 0.5s;
+}
+@keyframes impact{
+    0%{background: rgb(255, 17, 0);}
+    10%{ background: rgb(255, 17, 0);}
+}
+.impact{
+    animation: impact 0.2s linear 1;
+}
+
+#GAME{
+    height: 100%;
+    width: 102%;
+    position: absolute;
+    background-image: url(images/GAME.png);
+    background-position: -14px -6px;
+    background-repeat: no-repeat;
+    background-size: 101% 101vh;
+    cursor: url(images/web2.png),pointer;
+}
+
+#play{
+    height: 87%;
+    width: 70.5%;
+    position: absolute;
+    background-image: url(images/start.png);
+    background-repeat: no-repeat;
+    background-position: 1px -13px;
+    background-size: 991px 665px;
+    left: -2px;
+    bottom: 83px;
+    z-index: 6;
+}
+#play:hover{
+    opacity: 0.8;
+}
+
+#player {
+    width: 450px;
+    height: 351px;
+    position: absolute;
+    background-image: url(images/main.png);
+    background-size: 793px 321px;
+    background-repeat: no-repeat;
+    background-position: -375px 55px;
+    left: 817px;
+    bottom: -14px;
+    z-index: 7;
+    transition: 0.5s;
+}
+#player:hover{
+    animation: hover 1s linear infinite;
+}
+.hove{
+    animation: hover 1s linear infinite;
+}
+@keyframes hover{
+    0%{  background-image: url(images/yoo3.png); }
+    20%{  background-image: url(images/main.png);}
+    40%{  background-image: url(images/yoo3.png);transform: skewX(5deg);}
+    60%{  background-image: url(images/yoo5.1.png); transform: skewX(-5deg);}
+    80%{  background-image: url(images/yoo3.png);transform: skewX(5deg);}
+    100%{  background-image: url(images/main.png);}
+}
+.webs{
+    height: 15px ;
+    width: 30px;
+    background-color: aliceblue;
+    position: absolute;
+    bottom: 100PX;
+    left: 1220PX;
+    z-index: 7;
+    border-radius: 10px;
+}
+.hide{
+    display: none;
+}
+
+.yoo1{
+    animation: yoo1 1s linear infinite;
+}
+@keyframes yoo1{
+    0%{ background-image: url(images/yoo1.png); }
+   100%{ background-image: url(images/yoo1.png);}
+}
+
+.yoo2{
+    animation: yoo2 1s linear infinite;
+}
+@keyframes yoo2{
+    0%{  background-image: url(images/yoo5.1.png);}
+    10%{  background-image: url(images/yoo5.2.png);}
+    90%{  background-image: url(images/yoo5.2.png);}
+    100%{  background-image: url(images/yoo5.1.png);}
+}
+
+.one{
+    width: 70%;
+    height: 160px;
+    bottom: -78px;
+    position: relative;
+    display: inline-flex;
+    left: 0px;
+    z-index: 5;
+    transition: 0.5s;
+}
+@keyframes webfortarget1 {
+    0%{ bottom: 200PX;left: 900PX;}
+    10%{bottom: 200PX;left: 800PX;}
+    20%{ bottom: 470PX;left: 700PX; }
+    100%{ bottom: 500PX;left: -100PX;}
+}
+
+.two{
+    width: 70%;
+    height: 179px;
+    bottom: -6px;
+    position: relative;
+    display: inline-flex;
+    left: 10px;
+    z-index: 5;
+}
+@keyframes webfortarget2 {
+    0%{  bottom: 104PX;left: 860PX;}
+    20%{ bottom: 350PX;left: 800PX; }
+    60%{ bottom: 370PX;left: 400PX; }
+    100%{ bottom: 380PX;left: -100PX; }
+}
+
+#raju{
+    height: 120px;
+    width: 102px;
+    position: absolute;
+    left: 845px;
+    bottom: 346px;
+    background-image: url(images/raju.png);
+    background-repeat: no-repeat;
+    background-position: -7px 17px;
+    background-size: 130px 92px;
+    animation: dance 0.8s linear infinite;
+    transition: 0.5s;
+    z-index: -1;
+}
+@keyframes dance{
+    0%{}
+    20%{transform: skewx(-10deg);    bottom: 346px;}
+    50%{ transform: skewy(-5deg);     bottom: 400px;}
+    80%{transform: skewx(10deg);    bottom: 346px;}
+    100%{}
+}
+@keyframes killed{
+    0%{ left: 845px;}
+    100%{ left: 1200px;}
+}
+
+.zoms{
+    height: 120px;
+    width: 102px;
+    position: absolute;
+    left: -106px;
+    background-image: url(images/zombie.gif);
+    background-repeat: no-repeat;
+    background-position: -30px -5px;
+    background-size: 169px 123px;
+    z-index: -1;
+    bottom: 389px;
+    animation: walk 6s linear infinite ;
+}
+
+.zombs{
+    height: 120px;
+    width: 129px;
+    position: absolute;
+    left: 106px;
+    background-image: url(images/zom2.png);
+    background-repeat: no-repeat;
+    background-position: -30px -5px;
+    background-size: 200px 122px;
+    z-index: -1;
+    bottom: 309px;
+    animation: walk 5s linear infinite ;
+}
+@keyframes walk {
+    0%{  left: -106px;}
+    100%{  left: 1200px;}  
+}
+
+@keyframes kill1{
+    0%{   bottom: 389px;}
+    100%{   bottom: 1009px; transform: skewX(5deg);}
+}
+.kill1{
+    animation: kill1 1s linear infinite;
+}
+
+@keyframes kill2{
+    0%{  bottom: 309px;}
+    100%{ left: -300px;}
+}
+.kill2{
+    animation: kill2 1s linear 1;
+}

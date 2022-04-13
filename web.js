@@ -113,9 +113,9 @@ function collide() {
 
         ///////------CARZOMBIE & KID COLLIDE -----------
         else if (offsetX2 < 50 && offsetY2 < 50) {
-            raju.style.animation = "killed 0.5s linear 1"
+            raju.style.animation = "killed 1s linear 1"
 
-            setInterval(() => {
+            setTimeout(() => {
                 raju.classList.add("hide");
             }, 500);
 
@@ -127,7 +127,7 @@ function collide() {
             setInterval(() => {
                 window.location.reload();
             }, 1200);
-        }else{
+        } else {
             window.requestAnimationFrame(shoot)
         }
     }, 10);
@@ -135,41 +135,41 @@ function collide() {
 
 
 ///////// ======================= SHOOT COLLISON===============================
-function shoot(){
-setInterval(() => {
-    let web = document.querySelector(".webs")
+function shoot() {
+    setInterval(() => {
+        let web = document.querySelector(".webs")
 
-    wx = parseInt(window.getComputedStyle(web, null).getPropertyValue('left'));
-    wy = parseInt(window.getComputedStyle(web, null).getPropertyValue('top'));
+        wx = parseInt(window.getComputedStyle(web, null).getPropertyValue('left'));
+        wy = parseInt(window.getComputedStyle(web, null).getPropertyValue('top'));
 
-    offsetX = Math.abs(zx - wx);
-    offsetY = Math.abs(zy - wy);
+        offsetX = Math.abs(zx - wx);
+        offsetY = Math.abs(zy - wy);
 
-    offsetXX = Math.abs(zbx - wx);
-    offsetYY = Math.abs(zby - wy);
-    
-///////------ZOMBIE &   WEB COLLIDE -----------
-    if (offsetX < 50 && offsetY < 50) {
-        web.classList.add("hide");
-        zomy.classList.add("hide");
-        body.classList.add("impact")
-        die.play();
+        offsetXX = Math.abs(zbx - wx);
+        offsetYY = Math.abs(zby - wy);
 
-        setInterval(() => {
-            zomy.classList.remove("hide");
-            body.classList.remove("impact")
-        }, 500);
-    }
-///////------CARZOMBIE &   WEB COLLIDE -----------
-    else if (offsetXX < 50 && offsetYY < 50) {
-        web.classList.add("hide");
-        zombs.classList.add("hide");
-        body.classList.add("impact")
+        ///////------ZOMBIE &   WEB COLLIDE -----------
+        if (offsetX < 50 && offsetY < 50) {
+            web.classList.add("hide");
+            zomy.classList.add("hide");
+            body.classList.add("impact")
+            die.play();
 
-        setInterval(() => {
-            zombs.classList.remove("hide");
-            body.classList.remove("impact")
-        }, 500);
-    }
-}, 10);
+            setInterval(() => {
+                zomy.classList.remove("hide");
+                body.classList.remove("impact")
+            }, 500);
+        }
+        ///////------CARZOMBIE &   WEB COLLIDE -----------
+        else if (offsetXX < 50 && offsetYY < 50) {
+            web.classList.add("hide");
+            zombs.classList.add("hide");
+            body.classList.add("impact")
+
+            setInterval(() => {
+                zombs.classList.remove("hide");
+                body.classList.remove("impact")
+            }, 500);
+        }
+    }, 10);
 }

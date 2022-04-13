@@ -2,30 +2,34 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Shooter</title>
     <link rel="stylesheet" href="web.css">
 </head>
 
 <body>
-    <div id="GAME">
+    <div id="cont">
+        <!------ container ------->
+        <div id="GAME">
 
-        <div id="play" onclick="dis()"></div>
+            <!------ play button ------->
+            <img id="play" onclick="dis()">
 
-        <div class="zoms hide"></div>
-        <div class="zombs hide"></div>
-        
-        <div id="player" onclick="music()"></div>
-        <div id="raju"></div>
+            <!------ characters & other ------->
+            <div id="player" onclick="music()"></div>
+            <div id="raju"></div>
+            <div class="zoms hide"></div>
+            <div class="zombs hide"></div>
 
-        <div id="a" ondblclick="target1()" class="one "></div>
-         <br>
-        <div id="e" ondblclick="target2()" class="two "></div>
+            <!------ screen1 & 2 ------->
+            <div id="a" onclick="target1()" class="one "></div>
+            <br>
+            <div id="e" onclick="target2()" class="two "></div>
+        </div>
 
     </div>
+    <script src="web.js" defer></script>
 </body>
-<script src="web.js"></script>
-
+    
 </html>

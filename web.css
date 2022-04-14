@@ -19,6 +19,7 @@ body {
     background-repeat: no-repeat;
     overflow: hidden;
     z-index: 1;
+    cursor:url("images/web2.png"), pointer;
 }
 #GAME {
     width: 1000px;

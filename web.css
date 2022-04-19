@@ -178,6 +178,7 @@ body {
     transition: 0.5s;
     z-index: -1;
 }
+
 .zombs{
     height: 170px;
     width: 200px;

@@ -4,7 +4,8 @@ let play = document.querySelector("#play");
 let raju = document.querySelector("#raju");
 let zomy = document.querySelector(".zoms");
 let zombs = document.querySelector(".zombs");
-let body = document.querySelector("body")
+let body = document.querySelector("body");
+let impact = document.querySelector(".impact")
 
 //music
 let websound = new Audio("music/websound.m4a");
@@ -26,7 +27,7 @@ function music() {
 function dis() {
     play.classList.add("hide");
     player.classList.remove("hove");
-    tune.pause();
+    tune.play();
     horrortheme.play();
     zomy.classList.remove("hide");
     zombs.classList.remove("hide");
@@ -53,6 +54,7 @@ function target1() {
         web.classList.remove("webs");
     }, 1000);
 }
+
 //TARGET ------ 2 -----------------------------------------
 function target2() {
 
@@ -72,7 +74,6 @@ function target2() {
         web.classList.remove("webs");
     }, 1000);
 }
-
 
 /////////-------------- COLLISON B/W OBSTICLE AND KID --------------------------------------------------
 function collide() {
@@ -103,6 +104,7 @@ function collide() {
 
             zomy.classList.remove("walk");
 
+            tune.pause()
             gameover.play();
             die.play();
 
@@ -121,12 +123,14 @@ function collide() {
 
             zombs.classList.remove("walk");
 
+            tune.pause()
             gameover.play();
             die.play();
 
             setInterval(() => {
                 window.location.reload();
             }, 1200);
+            
         } else {
             window.requestAnimationFrame(shoot)
         }
@@ -136,6 +140,7 @@ function collide() {
 
 ///////// ======================= SHOOT COLLISON===============================
 function shoot() {
+    
     setInterval(() => {
         let web = document.querySelector(".webs")
 
@@ -149,27 +154,42 @@ function shoot() {
         offsetYY = Math.abs(zby - wy);
 
         ///////------ZOMBIE &   WEB COLLIDE -----------
-        if (offsetX < 50 && offsetY < 50) {
+        if (offsetX < 100 && offsetY < 100) {
+
             web.classList.add("hide");
             zomy.classList.add("hide");
-            body.classList.add("impact")
+
             die.play();
 
             setInterval(() => {
                 zomy.classList.remove("hide");
                 body.classList.remove("impact")
             }, 500);
+
+            impact.classList.remove("hide");
+            
+            setTimeout(() => {
+                impact.classList.add("hide");
+            }, 100);
         }
+
         ///////------CARZOMBIE &   WEB COLLIDE -----------
-        else if (offsetXX < 50 && offsetYY < 50) {
+        else if (offsetXX < 100 && offsetYY < 50) {
             web.classList.add("hide");
             zombs.classList.add("hide");
-            body.classList.add("impact")
+
+            die.play();
 
             setInterval(() => {
                 zombs.classList.remove("hide");
                 body.classList.remove("impact")
             }, 500);
+
+            impact.classList.remove("hide");
+            
+            setTimeout(() => {
+                impact.classList.add("hide");
+            }, 100);
         }
     }, 10);
 }

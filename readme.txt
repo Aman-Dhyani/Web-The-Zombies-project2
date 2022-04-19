@@ -1,4 +1,4 @@
-This is actually not a fully functyionally responsive game, 
+This is actually responsive game template, 
 this is only a template of a games
 In this game Spiderman sit on a house behind the window.
 click on play to onpen the window and we an see zombies coming towards th kid 
